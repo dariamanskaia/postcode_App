@@ -7,7 +7,7 @@ code {
   color: #E01A76;
 }
 
-.btn-primary {
+.submit_postcode {
   color: #fff;
   background-color: steelblue;
   border-color: steelblue;
@@ -15,19 +15,29 @@ code {
 }
 
 
-.add-form {
-  margin: 20px 0;
-  width: 50%;
-}
 
-.form-control label {
+.distance_km{
+  width: 80%;
+  background: green;
+  margin: 1em auto;
+  min-height: 4em;
+  padding: 1em;
+  text-align: center;
+}
+.submit_postcode{
   display: block;
+	border: 3px solid black;
+	color: #fff;
+  width: 80%;
+  background: black;
+  margin: 1em auto;
+  padding: 1em;
+}
+.submit_postcode:hover {
+    color: #0e83cd;
+    background: black;
 }
 
-.form-control input {
-  width: 100%;
-  height: 40px;
-  margin: 5px;
-  padding: 3px 7px;
-  font-size: 17px;
+.hidden {
+  display: none;
 }
