@@ -7,35 +7,51 @@ code {
   color: #E01A76;
 }
 
-.submit_postcode {
-  color: #fff;
-  background-color: steelblue;
-  border-color: steelblue;
-  margin: 5px;
+label{
+  display: block;
 }
 
-
-
-.distance_km{
-  width: 80%;
-  background: green;
+.input_postcode{
+  color: #000;
+  background: white;
+  border: 3px solid steelblue;
   margin: 1em auto;
   min-height: 4em;
   padding: 1em;
   text-align: center;
 }
+
 .submit_postcode{
-  display: block;
-	border: 3px solid black;
+	border: 3px solid steelblue;
 	color: #fff;
-  width: 80%;
-  background: black;
+  background: steelblue;
   margin: 1em auto;
+  min-height: 4em;
   padding: 1em;
 }
+
+.flexAlign{
+  display: inline-block;
+  justify-content: center;
+  align-content: space-between;
+  gap: 10px;
+}
+
+.distance_km{
+  width: 100%;
+  color: #000;
+  background: white;
+  border: 3px solid steelblue;
+  margin: 1em auto;
+  min-height: 4em;
+  padding: 1em;
+  text-align: center;
+}
+
 .submit_postcode:hover {
-    color: #0e83cd;
-    background: black;
+    color: steelblue;
+    background: rgb(23, 79, 124);
+    border: 3px solid rgb(23, 79, 124);
 }
 
 .hidden {
