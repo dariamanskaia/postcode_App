@@ -58,3 +58,8 @@ label{
   display: none;
 }
 
+
+
+.map-container {
+  height: 400px;
+}

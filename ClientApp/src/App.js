@@ -6,10 +6,17 @@ import { FetchData } from './components/FetchData';
 import { Counter } from './components/Counter';
 import { Postcode } from './components/Postcode';
 
+
 import './custom.css'
+
+
+
+
 
 export default class App extends Component {
   static displayName = App.name;
+
+
 
   render () {
 
@@ -23,3 +30,4 @@ export default class App extends Component {
     );
   }
 }
+

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { Map } from './Map';
 
 // function to validate input
 const validatePostcode = (postcode) => {
@@ -42,17 +42,14 @@ export class Postcode extends Component {
     super(props);
     this.state = {
       postcode: '',
-      distanceKm: 0,
+      distanceKm: 0
     };
-
+    
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
-    
-    validatePostcode("asdf");
-    console.log(event.target.value);
     this.setState({postcode: event.target.value});
   }
   
@@ -102,8 +99,6 @@ export class Postcode extends Component {
         console.log("Error fetching data:", e);
         this.setState({...this.state, isFetching: false});
       });
-
-
       
 };
   
@@ -113,25 +108,31 @@ export class Postcode extends Component {
   render() {
 
     return (
-      <form onSubmit={this.handleSubmit}>
-        <div>
-          <h1>How far away are you from the airport?</h1>
+      <div className="container">
+        <form onSubmit={this.handleSubmit}>
+          <div>
+            <h1>How far away are you from the airport?</h1>
 
-          <label htmlFor="input_postcode">Insert your postcode to calculate your distance to London Heathrow airport.</label>
-        
-          <div className="flexAlign">
-            <input name="input_postcode" type='text' className="input_postcode" placeholder='Insert postcode' value={this.state.postcode} onChange={this.handleChange}/>
-            <input type="submit" className="submit_postcode" />
+            <label htmlFor="input_postcode">Insert your postcode to calculate your distance to London Heathrow airport.</label>
+          
+            <div className="flexAlign">
+              <input name="input_postcode" type='text' className="input_postcode" placeholder='Insert postcode' value={this.state.postcode} onChange={this.handleChange}/>
+              <input type="submit" className="submit_postcode" />
+            </div>
+
+            <div className="distance_km">This location is <b> {this.state.distanceKm} km </b> and <b> {convertKmToM(this.state.distanceKm)} miles </b> away from the airport.</div>
+
           </div>
+        </form>
 
-          <div className="distance_km">This location is {this.state.distanceKm} km and {convertKmToM(this.state.distanceKm)} miles away from the airport.</div>
-
+        
+        <div className="map">
+          <Map />
         </div>
-      </form>
+      </div>
+
 
 
     );
   }
 }
-
-export default Postcode;
