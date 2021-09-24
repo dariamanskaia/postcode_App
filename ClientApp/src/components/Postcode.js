@@ -15,34 +15,36 @@ const deg2rad = (deg) => {
 }
 
 const getDistanceFromLatLonInKm = (lat1, lon1, lat2, lon2) => {
-  var R = 6371; // Radius of the earth in km
-  var dLat = deg2rad(lat2-lat1);  // deg2rad below
-  var dLon = deg2rad(lon2-lon1); 
-  var a = 
+  const R = 6371; // Radius of the earth in km
+  const dLat = deg2rad(lat2-lat1);  // deg2rad below
+  const dLon = deg2rad(lon2-lon1); 
+  const a = 
     Math.sin(dLat/2) * Math.sin(dLat/2) +
     Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * 
     Math.sin(dLon/2) * Math.sin(dLon/2)
     ; 
-  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
-  var d = R * c; // Distance in km
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+  const d = R * c; // Distance in km
   return d;
 }
 
 // convert km to miles
 const convertKmToM = (values) => {
   // you can make change as per requirement 
-  var realMiles = ( values * 0.621371 );
-  var Miles = Math.floor(realMiles);
+  const realMiles = ( values * 0.621371 );
+  const Miles = Math.floor(realMiles);
   return Miles;
 }
 
 
+//Controlled components - https://reactjs.org/docs/forms.html
 export class Postcode extends Component {
   constructor(props) {
     super(props);
     this.state = {
       postcode: '',
-      distanceKm: 0
+      distanceKm: 0,
+      history: '',
     };
     
     this.handleChange = this.handleChange.bind(this);
@@ -64,13 +66,14 @@ export class Postcode extends Component {
     }
     // alert('Your postcode is: ' + this.state.postcode);
 
+    
     //airport coordinates
     const coordinatesAirport = {
       latitude: 51.4700223,
       longitude: -0.4542955
     };
 
-    //get request react for the postcode coordinates
+    //get request react for the postcode coordinates - https://jasonwatmore.com/post/2020/01/27/react-fetch-http-get-request-examples
     const url = 'https://api.postcodes.io/postcodes/' + this.state.postcode;
     
     fetch(url)
@@ -81,18 +84,26 @@ export class Postcode extends Component {
           latitude: parseFloat(data.result.latitude),
           longitude: parseFloat(data.result.longitude),
         }   
-        console.log(coordinates)
-        console.log(coordinatesAirport)
+        // console.log(coordinates)
+        // console.log(coordinatesAirport)
       
         //get distance
         const distanceKm = parseFloat(getDistanceFromLatLonInKm(coordinatesAirport.latitude, coordinatesAirport.longitude, coordinates.latitude, coordinates.longitude));
-        console.log(distanceKm.toFixed(2))
+        // console.log(distanceKm.toFixed(2))
         this.setState({
           distanceKm: (distanceKm.toFixed(2))
         })
-        // document.querySelector('.distance_km').html(`This place is ${distanceKm.toFixed(2)}km away from the airport`);
-				// document.querySelector('.distance_km').removeClass("hidden");
+        
+        const addHistory = (values) => {
+          const history = (this.state.postcode);
+          // const result = `${history}`;
+          console.log(history)
+        }
+        addHistory();
        
+
+
+
         
       })
       .catch(e => {
@@ -118,15 +129,16 @@ export class Postcode extends Component {
             <div className="flexAlign">
               <input name="input_postcode" type='text' className="input_postcode" placeholder='Insert postcode' value={this.state.postcode} onChange={this.handleChange}/>
               <input type="submit" className="submit_postcode" />
+              <label className="history_postcode"> Postcode history: {this.state.postcode} </label>
             </div>
 
             <div className="distance_km">This location is <b> {this.state.distanceKm} km </b> and <b> {convertKmToM(this.state.distanceKm)} miles </b> away from the airport.</div>
-
+            
           </div>
         </form>
 
         
-        <div className="map">
+        <div className="map-container" >
           <Map />
         </div>
       </div>
