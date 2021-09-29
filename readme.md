@@ -1,48 +1,68 @@
-# We are excited you are taking the time to solve our technical assignment! #
+# [React App](https://)
 
-### Let’s pretend you are starting your first day with us. After you settle in, your first task will be assigned. Both Joseph (Product Owner) and Ness (Technical Lead) are ready to give you more details on your first task. ###
+## Download and Installation
 
-> Joseph - “Hi, I have your first task, excited?
+To begin using this template, choose one of the following options to get started:
 
-> We need to create a web application that allows you to find the addresses of our customers based on their postcodes. Multiple addresses will be searched, so it would be nice if we could add the history of the last 3 in the page. Finally, alongside the address, we need to display the distance in a straight line, from the customer location to London Heathrow airport (lat/long: 51.4700223,-0.4542955) this should be displayed in both kilometers and miles.”
+- Install using npm: `npm i startbootstrap-creative`
+- Clone the repo: `git clone https://github.com/StartBootstrap/startbootstrap-creative.git`
+- [Fork, Clone, or Download on GitHub](https://github.com/StartBootstrap/startbootstrap-creative)
 
-> Ness - “Ok, I understand the request and I think I can provide some help. I’ve heard about https://postcodes.io/, and we can use it as web service where we can type the postcode and we get the address details back, alongside the latitude and longitude. As its straight line it should be very easy to calculate the distance between the airport and the customer address.
+## Usage
 
-### A working example for the web service is: http://api.postcodes.io/postcodes/N76RS
+### Basic Usage
 
-## A few examples of valid postcodes in the UK are:
+After downloading, simply edit the HTML and CSS files included with `dist` directory. These are the only files you need to worry about, you can ignore everything else! To preview the changes you make to the code, you can open the `index.html` file in your web browser.
 
-| Index    | Postcode |          |
-|----------|----------|----------|
-| #1       | N76RS    |          |
-| #2       | SW46TA   |          |
-| #3       | SW1A     |          |
-| #4       | W1B3AG   |          |
-| #5       | PO63TD   |          |
+### Advanced Usage
 
-     
-	     
-		 
+Clone the source files of the theme and navigate into the theme's root directory. Run `npm install` and then run `npm start` which will open up a preview of the template in your default browser, watch for changes to core template files, and live reload the browser when changes are saved. You can view the `package.json` file to see which scripts are included.
 
-I would recommend a dotnet + react (or angular) application would be an excellent idea, but feel free to use other technologies/frameworks that help you achieve the goal. Remember the focus must be as much in having it working as it should to have a good user experience, bonus points if you are able to create tests (Unit, Integration, Automated) to help guarantee an excellent code quality. It is important the user understands all the functionalities we have to offer and is able to understand them correctly
+#### npm Scripts
 
-Once you are done please commit the code and create a Pull Request so we can code review it.”
+- `npm run build` builds the project - this builds assets, HTML, JS, and CSS into `dist`
+- `npm run build:assets` copies the files in the `src/assets/` directory into `dist`
+- `npm run build:pug` compiles the Pug located in the `src/pug/` directory into `dist`
+- `npm run build:scripts` brings the `src/js/scripts.js` file into `dist`
+- `npm run build:scss` compiles the SCSS files located in the `src/scss/` directory into `dist`
+- `npm run clean` deletes the `dist` directory to prepare for rebuilding the project
+- `npm run start:debug` runs the project in debug mode
+- `npm start` or `npm run start` runs the project, launches a live preview in your default browser, and watches for changes made to files in `src`
 
-Now that the exercise has been explained, you can start working on it, we normally request for it to be uploaded into our git repository within 3 working days, but can be changed if you need more time to start. This task should take you no longer than 3 hours and needless to say should be totally completed by you, after all this is supposed to be a fun challenge! 
+You must have npm installed in order to use this build environment.
 
----
+### Contact Form
 
-## We will provide you a git repository in bitbucket for the code to be uploaded. Please see the instructions below:
+The contact form available with this theme is prebuilt to use [SB Forms](https://startbootstrap.com/solution/contact-forms).
+SB Forms is a simple form solution for adding functional forms to your theme. Since this theme is prebuilt using our
+SB Forms markup, all you need to do is sign up for [SB Forms on Start Bootstrap](https://startbootstrap.com/solution/contact-forms).
 
-Please sign up for an account on Bitbucket if you don't have one already. If you do, feel free to use your own login / profile.
+After signing up you will need to set the domain name your form will be used on, and you will then see your
+access key. Copy this and paste it into the `data-sb-form-api-token='API_TOKEN'` data attribute in place of
+`API_TOKEN`. That's it! Your forms will be up and running!
 
-If you're not familiar with GIT, use the Sourcetree client to get started or visit http://git-scm.com for the official git client.
+If you aren't using SB Forms, simply delete the custom data attributes from the form, and remove the link above the
+closing `</body>` tag to SB Forms.
 
-Once you're done with your work, COMMIT and then PUSH (ie. send to bitbucket). The PUSH with notify us and we will review your work. Only push when you're done, and push once. This is to avoid us reviewing an incomplete submission.
+## Bugs and Issues
 
----
+Have a bug or an issue with this template? [Open a new issue](https://github.com/StartBootstrap/startbootstrap-creative/issues) here on GitHub or leave a comment on the [theme overview page at Start Bootstrap](https://startbootstrap.com/theme/creative/).
 
-### We're here to help...
-Should you run into problems or have any questions - please get in touch with either your recruitment agent or with Renato Oliveira - renato.oliveira@craftablesoftware.com
+## About
 
-Good luck  
+Start Bootstrap is an open source library of free Bootstrap themes and templates. All of the free themes and templates on Start Bootstrap are released under the MIT license, which means you can use them for any purpose, even for commercial projects.
+
+- <https://startbootstrap.com>
+- <https://twitter.com/SBootstrap>
+
+Start Bootstrap was created by and is maintained by **[David Miller](https://davidmiller.io/)**.
+
+- <https://davidmiller.io>
+- <https://twitter.com/davidmillerhere>
+- <https://github.com/davidtmiller>
+
+Start Bootstrap is based on the [Bootstrap](https://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
+
+## Copyright and License
+
+Copyright 2013-2021 Start Bootstrap LLC. Code released under the [MIT](https://github.com/StartBootstrap/startbootstrap-creative/blob/master/LICENSE) license.
